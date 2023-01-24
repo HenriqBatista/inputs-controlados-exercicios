@@ -21,8 +21,8 @@ Primeiro, vamos analisar todo o código que vocês estão recebendo.
 
 Você **não precisa responder às questões abaixo dentro de seu projeto**, mas é importante que leia o projeto e reflita sobre os questionamentos antes de prosseguir.
 
-- Observe o `App.js`, o que você consegue visualizar que já conhece? 
-- Entende o `<GlobalStyles/>`?
+- Observe o `App.js`, o que você consegue visualizar que já conhece? Sim.
+- Entende o `<GlobalStyles/>`? Sim.
 - Analize os componentes dentro do App.js, quantos e quais componentes estão sendo chamados aqui?
 
 - Agora analize o `JSX` de cada um desses componentes.
