@@ -11,26 +11,61 @@ const [formFlow, setFormFlow] = useState(1) //você não precisa mexer neste est
 
 const onChangeName = (event) => {
   setName(event.target.value)
+  
 }
 
 const onChangeAge = (event) => {
   setAge(event.target.value)
+ 
 }
 
 const onChangeEmail = (event) => {
   setEmail(event.target.value)
 }
+////////////////////////////////////////////////////////
+const [birth, setBirth] = useState("")
+const [tel, setTel] = useState("")
+const [selfDeclaration, setSelfDeclaration] = useState("")
+
+const onChangeBirth = (event) => {
+  setBirth(event.target.value)
+ 
+}
+const onChangeTel = (event) => {
+  setTel(event.target.value)
+ 
+}
+const onChangeSelfDeclaration = (event) => {
+  setSelfDeclaration(event.target.value)
+ 
+}
 
 const sendData = () => {
   //aqui deve vir uma verificação para mudar de formulario apenas se todos os requisitos tiverem sido cumpridos
-  setFormFlow(2)
+  if(
+    age >= 18 &&
+    name.length >= 10 &&
+    name.length <= 30 &&
+    email.includes("@") &&
+    name != "" &&
+    age != "" &&
+    email != ""
+  ){
+    setFormFlow(2)
+  } else{
+    alert("Você precisa preencher corretamente o formulário para prosseguir com o cadastro")
+  }
 }
+
+const sendData2 = () =>{
+
+}
+
   return (
     <MainContainer>
       <h2>Formulário de inscrição</h2>
       {formFlow === 1 ? <NameForm
-      // insira aqui suas props
-      /> : <ConfirmationForm />}
+      name ={name} age={age} email={email} onChangeAge={onChangeAge} onChangeName = {onChangeName} onChangeEmail = {onChangeEmail} sendData = {sendData}/> : <ConfirmationForm birth={birth} tel={tel} selfDeclaration={selfDeclaration} onChangeBirth={onChangeBirth} onChangetel={onChangeTel} onChangeSelfDeclaration={onChangeSelfDeclaration} sendData2={sendData2} />}
     </MainContainer>
   )
 }
